@@ -1,0 +1,13 @@
+name: Add Recently Created Issues to Project Column
+on:
+  issues:
+    types: [opened]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: CIRCLECI-GWP/github-project-automation-plus@v1
+      with:
+        project: Maintenance
+        column: To do (Others)
+        repo-token: ${{ secrets.PROJECT_ADMIN_TOKEN }}
